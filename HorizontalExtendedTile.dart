@@ -1,8 +1,6 @@
 // Copyright 2014 The Flutter Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
-
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 const Duration _kExpand = Duration(milliseconds: 200);
@@ -208,11 +206,9 @@ class _HorizontalExtendedTileState extends State<HorizontalExtendedTile>
       builder: _buildChildren,
       child: closed
           ? null
-          : Container(
-              margin: EdgeInsets.symmetric(vertical: 20.0),
-              width: 200, // Change this according to your content size
-              child: ListView(
-                  scrollDirection: Axis.horizontal, children: widget.children)),
+          : LayoutBuilder(
+              builder: (context, constraints) =>
+                  Row(children: widget.children)),
     );
   }
 }
