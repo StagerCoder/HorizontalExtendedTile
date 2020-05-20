@@ -210,7 +210,6 @@ class _HorizontalExtendedTileState extends State<HorizontalExtendedTile>
           ? null
           : Container(
               margin: EdgeInsets.symmetric(vertical: 20.0),
-              height: 200.0,
               width: 200,
               child: ListView(
                   scrollDirection: Axis.horizontal, children: widget.children)),
